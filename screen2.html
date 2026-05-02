@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendix | Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --bg-color: #f4f7f6;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --ok-color: #2ecc71;
+            --warning-color: #f1c40f;
+            --block-color: #e74c3c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0; padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            padding: 40px 20px;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        .header-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            border-left: 6px solid var(--primary-blue); /* Line on the left for English */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .student-details h1 { font-size: 24px; color: #34495e; }
+        .student-details p { color: #7f8c8d; font-size: 14px; }
+
+        /* Dashboard Grid */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .subject-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .subject-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: block;
+            color: #2c3e50;
+        }
+
+        /* Circular Progress Styling */
+        .progress-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+        }
+
+        .circular-chart {
+            display: block;
+            margin: 10px auto;
+            max-width: 100%;
+        }
+
+        .circle-bg {
+            fill: none;
+            stroke: #eee;
+            stroke-width: 2.8;
+        }
+
+        .circle {
+            fill: none;
+            stroke-width: 2.8;
+            stroke-linecap: round;
+            transition: stroke-dasharray 1s ease 0s;
+        }
+
+        .percentage-text {
+            fill: #333;
+            font-family: 'Cairo';
+            font-size: 0.5em;
+            text-anchor: middle;
+            font-weight: bold;
+        }
+
+        /* Status Badge */
+        .status-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .status-ok { background: #e8f8f0; color: var(--ok-color); }
+        .status-warning { background: #fff9e6; color: var(--warning-color); }
+        .status-block { background: #feeae9; color: var(--block-color); }
+
+        /* Stats Section */
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .stat-box span { display: block; font-size: 12px; color: #95a5a6; text-transform: uppercase; }
+        .stat-box strong { font-size: 18px; color: #2c3e50; }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-card">
+        <div class="student-details">
+            <h1>Welcome, Merola Nader</h1>
+            <p>Student ID: 423235896</p>
+        </div>
+        <div class="app-logo">
+            <strong style="color: var(--primary-blue); font-size: 22px;">Attendix</strong>
+        </div>
+    </div>
+
+    <div class="subjects-grid">
+        <div class="subject-card">
+            <span class="subject-name">Artificial Intelligence</span>
+            <div class="progress-container">
+                <svg viewBox="0 0 36 36" class="circular-chart">
+                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="circle" stroke="#2ecc71" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <text x="18" y="20.35" class="percentage-text">80%</text>
+                </svg>
+            </div>
+            <span class="status-badge status-ok">Status: OK</span>
+            <div class="stats-row">
+                <div class="stat-box"><span>Attended</span><strong>16</strong></div>
+                <div class="stat-box"><span>Absent</span><strong>4</strong></div>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <span class="subject-name">Information Security</span>
+            <div class="progress-container">
+                <svg viewBox="0 0 36 36" class="circular-chart">
+                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="circle" stroke="#e74c3c" stroke-dasharray="45, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <text x="18" y="20.35" class="percentage-text">45%</text>
+                </svg>
+            </div>
+            <span class="status-badge status-block">Status: Blocked</span>
+            <div class="stats-row">
+                <div class="stat-box"><span>Attended</span><strong>9</strong></div>
+                <div class="stat-box"><span>Absent</span><strong>11</strong></div>
+            </div>
+        </div>
+
+        <div class="subject-card">
+            <span class="subject-name">Human Resources</span>
+            <div class="progress-container">
+                <svg viewBox="0 0 36 36" class="circular-chart">
+                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="circle" stroke="#f1c40f" stroke-dasharray="60, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <text x="18" y="20.35" class="percentage-text">60%</text>
+                </svg>
+            </div>
+            <span class="status-badge status-warning">Status: Warning</span>
+            <div class="stats-row">
+                <div class="stat-box"><span>Attended</span><strong>12</strong></div>
+                <div class="stat-box"><span>Absent</span><strong>8</strong></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 50%, #7aa6d8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-wrapper {
+    width: 100%;
+}
+
+.login-card {
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+}
+
+.logo-container {
+    width: 140px; 
+    height: 110px; 
+    margin: 0 auto 15px;
+    overflow: hidden; 
+    position: relative;
+}
+
+.cropped-logo {
+    position: absolute;
+    width: 500px; 
+    height: auto;
+    top: -15px; 
+    left: -175px; 
+}
+
+.app-title {
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #1f5fa8;
+    letter-spacing: 1px;
+}
+
+.form-label {
+    font-weight: 700;
+    font-size: 15px;
+    color: #2c3e50;
+    margin-bottom: 7px;
+}
+
+.form-control {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #1f5fa8;
+    box-shadow: 0 0 8px rgba(31, 95, 168, 0.2);
+}
+
+.password-field {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    z-index: 10;
+}
+
+.login-btn {
+    background: #1f5fa8;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(31, 95, 168, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.login-btn:hover {
+    background: #164a85;
+    transform: scale(1.05);
+    color: white;
+}
+
+.signup-btn {
+    border: 2px solid #1f5fa8;
+    color: #1f5fa8;
+    border-radius: 10px;
+    padding: 10px;
+    background: white; /* تأكيد اللون الأبيض */
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+/* التعديل المطلوب: الحركة موجودة لكن الخلفية تظل بيضاء */
+.signup-btn:hover {
+    background: white; /* يظل أبيض كما طلبتِ */
+    color: #1f5fa8;    /* يظل النص أزرق */
+    transform: scale(1.05); /* الحركة محفوظة */
+    border-color: #1f5fa8;
+}
+
+.forgot-link {
+    font-size: 13px;
+    text-decoration: none;
+    color: #1f5fa8;
+    transition: color 0.2s ease;
+}
+
+.forgot-link:active {
+    color: #ff0000 !important;
+    font-weight: bold;
+}
+
+@media(max-width:768px) {
+    .login-card { padding: 25px; }
+    .app-title { font-size: 24px; }
+}

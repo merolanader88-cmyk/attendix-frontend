@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendix | Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-10">
+                
+                <div class="login-card text-center">
+                    
+                    <div class="logo-container mb-3">
+                        <img src="images/project.jpeg" class="cropped-logo" alt="Attendix Logo">
+                    </div>
+
+                    <h2 class="app-title">Attendix</h2>
+
+                    <form class="login-form">
+                        <div class="form-group text-start mb-3">
+                            <label class="form-label">E-mail</label>
+                            <input type="email" class="form-control" name="email" placeholder="Enter Email Address" required>
+                        </div>
+
+                        <div class="form-group text-start mb-2 position-relative">
+                            <label class="form-label">Password</label>
+                            <div class="password-field">
+                                <input type="password" id="password" class="form-control" name="password" placeholder="Enter Password" required>
+                                <i class="fa-regular fa-eye-slash toggle-password" id="togglePassword"></i>
+                            </div>
+                        </div>
+
+                        <div class="text-end mb-4">
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn login-btn w-50">Log in</button>
+                            <button type="button" class="btn signup-btn w-50">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
